@@ -1,0 +1,2 @@
+Before runnning this word finder, please make sure you have Python installed: https://www.python.org/downloads/
+Once you have gotten Python, double-click the translator.py file and follow the instructions.
