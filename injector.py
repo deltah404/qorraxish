@@ -1,3 +1,6 @@
+from os import system
+
+
 def newword(eng, qor):
     import json
     with open('./dictionary.json', 'r+') as dictfile:
@@ -22,6 +25,8 @@ def sort():
         d = json.load(dictfile)
 
     d = dict(sorted(d.items(), key=lambda item: item[0]))
+    with open('./dictionary.json', 'w+') as dictfile:
+        json.dump(d, dictfile, indent=4)
     
 def check(w):
     import json
@@ -29,7 +34,7 @@ def check(w):
         d = json.load(dictfile)
         
     if w.lower() in d.keys():
-        print('Word is defined.')
+        print(f'Word is defined: {d[w.lower()]}')
     else:
         print('Word has not yet been defined.')
         
@@ -43,3 +48,6 @@ def dlength():
         result += 1
     
     print(result)
+    
+def otranslate():
+    exec(open('translator.py').read())
