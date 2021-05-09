@@ -10,7 +10,7 @@ def newword(eng, qor):
     qor = qor.lower()
     
     if eng in before.keys():
-        return print('Word already has a definition.')
+        return print('Word already has a translation.')
         
     before[eng] = qor
     before = dict(sorted(before.items(), key=lambda item: item[0]))
